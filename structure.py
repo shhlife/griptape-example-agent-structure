@@ -41,7 +41,9 @@ def run(
     setup_cloud_listener()
 
     Agent(
-        prompt_driver=OpenAiChatPromptDriver(model=model), tools=[DateTimeTool()]
+        prompt_driver=OpenAiChatPromptDriver(model=model),
+        tools=[DateTimeTool()],
+        stream=True,
     ).run(prompt)
 
 
